@@ -3,20 +3,17 @@ import React, { useState } from 'react';
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
-import { useHistory } from 'react-router';
+
 
 const Login = (props) => {
-  const history = useHistory();
+  
   const [enteredEmail, setEnteredEmail] = useState('');
   const [emailIsValid, setEmailIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  const submitButtonHandler = () => {
-    history.push("/home");
-  }
-
+ 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
     // setEmailIsValid(enteredEmail.includes('@'));
@@ -81,7 +78,7 @@ const Login = (props) => {
           />
         </div>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disabled={!formIsValid} onClick={submitButtonHandler}>
+          <Button type="submit" className={classes.btn} disabled={!formIsValid} >
             Go
           </Button>
         </div>
