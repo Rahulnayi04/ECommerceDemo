@@ -2,9 +2,7 @@ import { Fragment, useState } from "react"
 import classes from "./Quantity.module.css"
 
 const Quantity = (props) =>{
-    
     const [inputValue, setInputValue] = useState(0);
-
     const valueOfButton = (e)=>{
         if(e.target.id == `plus`)
         {
@@ -23,7 +21,6 @@ const Quantity = (props) =>{
             }
         }
         console.log(inputValue);
-        
     }
 
     return (
