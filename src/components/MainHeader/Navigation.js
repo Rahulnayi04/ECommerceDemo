@@ -7,6 +7,9 @@ const Navigation = (props) => {
   const ToggleMenu = (isMenuOpen) => {
     setMenuOpen(isMenuOpen)
   }
+  const closeMenu = ()=>{
+    setMenuOpen(false)
+  }
 
   return (
     <div>
@@ -20,7 +23,9 @@ const Navigation = (props) => {
         
         {props.isLoggedIn && (
           <li>
-            <button onClick={props.onLogout}>Logout</button>
+            <div onClick={closeMenu}>
+            <button onClick={props.onLogout} >Logout</button>
+            </div>
           </li>
         )}
       </ul>
