@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import Menu from '../MainHeader/Menu';
 import Quantity from '../Quantity/Quantity';
-
 import Card from '../UI/Card/Card';
 import classes from './Home.module.css';
 
@@ -45,10 +44,9 @@ const Home = (props) => {
   
   const totalQuantity = (count, price, id) => {
     id === 1 ? price1 = (count)*price : id === 2 ? price2 = (count)*price : price3 = (count)*price;
-    
-    // console.log(count, price2, price3);
     setTotalPrice(price1 + price2 + price3)
   }
+  
   return (
     <div style={{fontSize: '22px'}}>
       <h2 style={{ textAlign: "center" }}>Products</h2>
@@ -58,7 +56,6 @@ const Home = (props) => {
         <p style={{flex:2, fontWeight: "bold"}}>Quantity</p>
       </div>
 
-      {/* <div style={{ display: "flex", margin: "5rem" }}> */}
         {DUMMY_DATA.map(ele => 
           (
             <div style={{display: "flex", marginLeft: "5rem", marginBottom: "5rem"}}>
@@ -73,19 +70,15 @@ const Home = (props) => {
               </div>
               <div style={{ flex: 0.75 }}>
                 <p>{ele.price}</p> 
-                
               </div>
               <div style={{ flex: 2 }}>
                 <Quantity key={ele.id} price={ele.price} totalCount={totalQuantity} id={ele.id}/>
-                
               </div>
             </div>
           )
         )}
-      {/* </div> */}
       <br />
       <div style={{textAlign: "center", marginLeft: "31rem"}}>
-        
         <h4 style={{marginRight:'20px'}}>Total</h4>
         <h4>{totalPrice}</h4>
       </div>
